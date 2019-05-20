@@ -3,9 +3,9 @@ import * as validation from 'express-joi-validation';
 import { CommonController, commonValidators } from '../components/Common';
 
 export class CommonRouter {
+  public router: Router;
   protected commonController: CommonController;
   protected validator: any;
-  public router: Router;
 
   constructor() {
     this.commonController = new CommonController();

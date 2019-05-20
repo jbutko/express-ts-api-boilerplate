@@ -1,0 +1,19 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noLib": false,
+    "outDir": "./build",
+    "removeComments": false,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "target": "es6",
+    "typeRoots": ["src/types", "node_modules/@types"]
+  },
+  "include": ["src"],
+  "exclude": ["build", "jest", "node_modules", "scripts", "webpack", "types"],
+  "filesGlob": ["./**/*.ts", "!./build/**/*.ts", "!./node_modules/**/*.ts"],
+  "lib": ["es6"]
+}

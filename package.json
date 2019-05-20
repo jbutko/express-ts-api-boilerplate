@@ -1,0 +1,62 @@
+{
+  "name": "gardisto-server-api",
+  "version": "0.0.1",
+  "description": "Gardisto: Server API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r ts-node/register --inspect ./src/index.ts",
+    "dev": "nodemon",
+    "build": "tsc",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint:fix": "tslint -p . --fix",
+    "format:prettier": "prettier \"src/**/*.ts\" -l \"warn\"",
+    "format:prettier:fix": "prettier --write \"src/**/*.ts\" -l \"warn\"",
+    "format:fix": "prettier --write \"src/**/*.ts\" -l \"warn\" && npm run lint:fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jbutko/gardisto.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "mongodb",
+    "express",
+    "server"
+  ],
+  "author": "Jozef Butko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbutko/gardisto/issues"
+  },
+  "homepage": "https://github.com/jbutko/gardisto",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "debug": "^4.1.1",
+    "dotenv": "^7.0.0",
+    "errorhandler": "^1.5.0",
+    "express": "^4.17.0",
+    "express-joi-validation": "^0.3.0",
+    "helmet": "^3.16.0",
+    "joi": "^14.3.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/compression": "0.0.36",
+    "@types/debug": "^4.1.4",
+    "@types/dotenv": "^6.1.1",
+    "@types/errorhandler": "0.0.32",
+    "@types/express": "^4.16.1",
+    "@types/helmet": "0.0.43",
+    "@types/joi": "^14.3.3",
+    "@types/node": "^11.13.7",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^1.18.11",
+    "prettier": "^1.17.0",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~3.4.5"
+  }
+}

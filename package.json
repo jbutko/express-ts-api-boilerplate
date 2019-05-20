@@ -1,7 +1,7 @@
 {
-  "name": "gardisto-server-api",
+  "name": "express-ts-api-boilerplate",
   "version": "0.0.1",
-  "description": "Gardisto: Server API",
+  "description": "Express Typescript API Boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "node -r ts-node/register --inspect ./src/index.ts",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jbutko/gardisto.git"
+    "url": "git@github.com:jbutko/express-ts-api-boilerplate.git"
   },
   "keywords": [
     "node",
@@ -27,9 +27,9 @@
   "author": "Jozef Butko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jbutko/gardisto/issues"
+    "url": "https://github.com/jbutko/express-ts-api-boilerplate/issues"
   },
-  "homepage": "https://github.com/jbutko/gardisto",
+  "homepage": "https://github.com/jbutko/express-ts-api-boilerplate",
   "dependencies": {
     "compression": "^1.7.4",
     "debug": "^4.1.1",

@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "gardisto-server-api",
+      "name": "express-ts-api-boilerplate",
       "script": "./build/index.js",
       "watch": false,
       "env": {
@@ -11,8 +11,8 @@
       "autorestart": true,
       "instances": 1,
       "log_date_format": "DD.MM.YYYY HH:mm Z",
-      "error_file": "/home/user/apps/gardisto/server/analytics/logs/pm2/error.log",
-      "out_file": "/home/user/apps/gardisto/server/analytics/logs/pm2/out.log"
+      "error_file": "/home/user/apps/express-ts-api-boilerplate/server/analytics/logs/pm2/error.log",
+      "out_file": "/home/user/apps/express-ts-api-boilerplate/server/analytics/logs/pm2/out.log"
     }
   ]
 }

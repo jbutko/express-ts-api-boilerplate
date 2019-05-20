@@ -11,7 +11,7 @@
     "lint:fix": "tslint -p . --fix",
     "format:prettier": "prettier \"src/**/*.ts\" -l \"warn\"",
     "format:prettier:fix": "prettier --write \"src/**/*.ts\" -l \"warn\"",
-    "format:fix": "prettier --write \"src/**/*.ts\" -l \"warn\" && npm run lint:fix"
+    "format:lint:fix": "prettier --write \"src/**/*.ts\" -l \"warn\" && npm run lint:fix"
   },
   "repository": {
     "type": "git",

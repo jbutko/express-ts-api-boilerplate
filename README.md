@@ -1,6 +1,6 @@
 # Express Typescript API Boilerplate
 
-Simple Express API boilerplate build with Typescript.
+Simple Express API boilerplate built with Typescript.
 
 ## Technologies/Packages used
 

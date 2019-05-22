@@ -57,19 +57,19 @@ yarn install // or npm install
 ```
 
 │   .editorconfig                         // https://editorconfig.org/
-│   .env                                  // Base environment variables goes here - BEWARE: This one is commited in the repo, do not store sensitive data here.
-│   .env.local                            // Store sensitive variables here that will be called through `process.env.MY_TOP_SECRET_VAR`. This one is not commited in the repo.
+│   .env                                  // Base environment variables goes here - BEWARE: This one is commited in the repo, do not store sensitive variables here.
+│   .env.local                            // Sensitive variables goes here. Overrides variables from `.env`. BEWARE: This one is not commited in the repo.
 │   .gitignore                            // Git ignored files
 │   .prettierignore                       // Prettier ignored files
-│   .prettierrc                           // Prettier config file: no more tab/space space bullshit with your collegues
+│   .prettierrc                           // Prettier config file: no more tab/space bullshit with your collegues
 │   LICENSE                               // License file, MIT of course
 │   nodemon.json                          // Nodemon config file
-│   package.json                          // App dependencies and stuff...
-│   pm2-process.json                      // PM2 process config file - start the app with command `pm2 start pm2-process.json`
+│   package.json                          // App dependencies, project information and stuff...
+│   pm2-process.json                      // PM2 process config file: start the app with command `pm2 start pm2-process.json`
 │   README.md                             // Project Readme
 │   tsconfig.json                         // TypeScript config file
 │   tslint.json                           // TypeScript linting config file
-│   yarn.lock                             // yarn lockfile => https://yarnpkg.com/blog/2016/11/24/lockfiles-for-all/
+│   yarn.lock                             // Yarn lockfile => https://yarnpkg.com/blog/2016/11/24/lockfiles-for-all/
 │
 └───src                                   // App root folder
     │   index.ts                          // Main entry point: http server and express app initialization
@@ -89,8 +89,9 @@ yarn install // or npm install
     │   │           index.ts              // Public API of `Common` component: CommonController, commonValidators etc.
     │   │
     │   ├───core                          // Core components: common logic that is used in more than one place of the app
-    │   │       Env.ts                    // Environment settings configuration (dotenv)
+    │   │       Env.ts                    // Environment settings configuration through dotenv - variables from `/.env` and `./env.local` will be initialized here.
     │   │       ErrorHandling.ts          // Express error handler functions for prod/dev/404
+    │   │       Dates.ts                  // All dates/times related functions
     │   │       index.ts                  // Public API of `core` folder: ENV, ErrorHandling etc.
     │   │
     │   └───routers                       // Routers for individual components from `components` folder
@@ -120,6 +121,12 @@ Start the app:
 
 ```
 pm2 start pm2-process.json
+```
+
+App will be started in daemon mode. To check logs of the app issue following command:
+
+```
+pm2 logs nameOfTheAppFromPm2-Process.json
 ```
 
 Copyright (C) 2019 Jozef Butko

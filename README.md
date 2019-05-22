@@ -105,8 +105,9 @@ yarn install // or npm install
 
 ### Debugging
 
-If you need to debug some of your code during development, it's very easy. Open a new tab in Chrome: `chrome://inspect/# devices` and then open the file you need to debug. Use `Ctrl + P` shortcut to find the file you need. for example `Common.controller.ts`. After adding a breakpoint the TypeScript file should be opened directly in devtools.
-Note: If inspect mode does not work for you, you need to set the ports through the `Configure` button in `chrome://inspect/# devices`. The port through which the inspect mode goes is displayed during app launch in the command line ("Debugger listening on ws://127.0.0.1:9229/...").
+If you need to debug some of your code during development, it's very easy. Open a new tab in Chrome: `chrome://inspect/# devices` and then open the file you need to debug. Use `Ctrl + P` shortcut to find the file you need, for example `Common.controller.ts`. After adding a breakpoint the TypeScript file should be opened directly in devtools.
+
+**Note:** If inspect mode does not work for you, you need to configure ports by clicking on `Configure` button in `chrome://inspect/# devices`. The port through which the inspect mode goes is displayed during app launch in the command line ("Debugger listening on ws://127.0.0.1:9229/...").
 
 ### Production deployment example
 

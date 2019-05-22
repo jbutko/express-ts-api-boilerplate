@@ -1,12 +1,16 @@
-# Express Typescript API Boilerplate
+# Express TypeScript API Boilerplate
 
-Simple Express API boilerplate built with Typescript.
+Simple Express API boilerplate built with TypeScript.
 
-## Technologies/Packages used
+### Motivation
 
-Typescript, ES6, Express, TSLint, Dotenv, Prettier, Joi, Nodemon
+The motivation was to create a boilerplate for NodeJS/TypeScript projects without having to spend long hours to setup development tools, build/linting/formatting tasks and similar "funny" stuff.
 
-## Installation
+### Technologies and Packages used
+
+TypeScript, ES6, Express, TSLint, Dotenv, Prettier, Joi, Nodemon
+
+### Installation
 
 ```
 git clone git@github.com:jbutko/express-ts-api-boilerplate.git
@@ -14,7 +18,7 @@ cd express-ts-api-boilerplate
 yarn install // or npm install
 ```
 
-## Scripts
+### Scripts
 
 `npm run dev`
 
@@ -48,7 +52,7 @@ yarn install // or npm install
 
 - fix formatting errors via Prettier
 
-## Example of project directory structure
+### Project directory structure example
 
 ```
 │   index.ts                          // Main entry point: server and express app initialization
@@ -61,7 +65,7 @@ yarn install // or npm install
 │   │   └───Common                    // Common component
 │   │           Common.controller.ts  // API controller for `Common` component: API endpoint handlers goes here, keep it simple!
 │   │           Common.validators.ts  // Joi validation schemas. Imported in `app/routers` files.
-│   │           Common.interface.ts   // Typescript interfaces/enums for `Common` component
+│   │           Common.interface.ts   // TypeScript interfaces/enums for `Common` component
 │   │           Common.db.ts          // Database access related code
 │   │           Common.service.ts     // Generic functions related to data processing or stuff that do not need db access
 │   │           Common.middleware.ts  // Express middleware functions, for example user auth verification etc. Imported in `app/routers` files.
@@ -76,9 +80,29 @@ yarn install // or npm install
 │           Common.router.ts          // API Endpoint handlers for `Common` controller
 │           index.ts                  // All exported routers
 │
-└───types                             // Typescript definition files goes here
+└───types                             // TypeScript definition files goes here
         types.d.ts                    // Generic typescript definition file
 ```
 
+### Production deployment example
+
+Clone the repo on any unix (cloud) server. Make a build of the app:
+
+```
+npm run build
+```
+
+Install [pm2](https://github.com/Unitech/pm2) globally:
+
+```
+yarn add -g pm2
+```
+
+Start the app:
+
+```
+pm2 start pm2-process.json
+```
+
 Copyright (C) 2019 Jozef Butko
-https://www.jozefbutko.com
+[www.jozefbutko.com](https://www.jozefbutko.com)

@@ -20,68 +20,86 @@ yarn install // or npm install
 
 ### Scripts
 
-`npm run dev`
+`yarn run dev`
 
 - run the app in development mode, app will be reloaded on file changes
 
-`npm run start`
+`yarn run start`
 
 - start the app in non-reloadable mode
 
-`npm run build`
+`yarn run build`
 
 - build the app
 
-`npm run lint`
+`yarn run lint`
 
 - check typescript errors via TSLint
 
-`npm run lint:fix`
+`yarn run lint:fix`
 
 - check and fix typescript errors via TSLint
 
-`npm run format:lint:fix`
+`yarn run format:lint:fix`
 
 - check and fix typescript errors via TSLint and correct formatting errors via Prettier
 
-`npm run format:prettier`
+`yarn run format:prettier`
 
 - check for formatting errors via Prettier
 
-`npm run format:prettier:fix`
+`yarn run format:prettier:fix`
 
 - fix formatting errors via Prettier
 
 ### Project directory structure example
 
 ```
-│   index.ts                          // Main entry point: server and express app initialization
+
+│   .editorconfig                         // https://editorconfig.org/
+│   .env                                  // Base environment variables goes here - BEWARE: This one is commited in the repo, do not store sensitive data here.
+│   .env.local                            // Store sensitive variables here that will be called through `process.env.MY_TOP_SECRET_VAR`. This one is not commited in the repo.
+│   .gitignore                            // Git ignored files
+│   .prettierignore                       // Prettier ignored files
+│   .prettierrc                           // Prettier config file: no more tab/space space bullshit with your collegues
+│   LICENSE                               // License file, MIT of course
+│   nodemon.json                          // Nodemon config file
+│   package.json                          // App dependencies and stuff...
+│   pm2-process.json                      // PM2 process config file - start the app with command `pm2 start pm2-process.json`
+│   README.md                             // Project Readme
+│   tsconfig.json                         // TypeScript config file
+│   tslint.json                           // TypeScript linting config file
+│   yarn.lock                             // yarn lockfile => https://yarnpkg.com/blog/2016/11/24/lockfiles-for-all/
 │
-├───app                               // App folder
-│   │   App.routes.ts                 // Main express router: individual routers from `app/routers` folder are imported here
-│   │   App.ts                        // Express app config: middlewares, router initialization, error handling initialization
-│   │
-│   ├───components                    // All components (entities) goes here
-│   │   └───Common                    // Common component
-│   │           Common.controller.ts  // API controller for `Common` component: API endpoint handlers goes here, keep it simple!
-│   │           Common.validators.ts  // Joi validation schemas. Imported in `app/routers` files.
-│   │           Common.interface.ts   // TypeScript interfaces/enums for `Common` component
-│   │           Common.db.ts          // Database access related code
-│   │           Common.service.ts     // Generic functions related to data processing or stuff that do not need db access
-│   │           Common.middleware.ts  // Express middleware functions, for example user auth verification etc. Imported in `app/routers` files.
-│   │           index.ts              // Public API of `Common` component: CommonController, commonValidators etc.
-│   │
-│   ├───core                          // Core components: common logic that is used in more than one place of the app
-│   │       Env.ts                    // Environment settings configuration (dotenv)
-│   │       ErrorHandling.ts          // Express error handler functions for prod/dev/404
-│   │       index.ts                  // Public API of `core` folder: ENV, ErrorHandling etc.
-│   │
-│   └───routers                       // Routers for individual components from `components` folder
-│           Common.router.ts          // API Endpoint handlers for `Common` controller
-│           index.ts                  // All exported routers
-│
-└───types                             // TypeScript definition files goes here
-        types.d.ts                    // Generic typescript definition file
+└───src                                   // App root folder
+    │   index.ts                          // Main entry point: http server and express app initialization
+    │
+    ├───app                               // App folder
+    │   │   App.routes.ts                 // Main express router: individual routers from `app/routers` folder are imported here
+    │   │   App.ts                        // Express app config: middlewares, router initialization, error handling initialization
+    │   │
+    │   ├───components                    // All components (entities) goes here
+    │   │   └───Common                    // Common component
+    │   │           Common.controller.ts  // API controller for `Common` component: API endpoint handlers goes here, keep it simple!
+    │   │           Common.validators.ts  // Joi validation schemas. Imported in `app/routers` files.
+    │   │           Common.interface.ts   // TypeScript interfaces/enums for `Common` component
+    │   │           Common.db.ts          // Database access related code
+    │   │           Common.service.ts     // Generic functions related to data processing or stuff that do not need db access
+    │   │           Common.middleware.ts  // Express middleware functions, for example user auth verification etc. Imported in `app/routers` files.
+    │   │           index.ts              // Public API of `Common` component: CommonController, commonValidators etc.
+    │   │
+    │   ├───core                          // Core components: common logic that is used in more than one place of the app
+    │   │       Env.ts                    // Environment settings configuration (dotenv)
+    │   │       ErrorHandling.ts          // Express error handler functions for prod/dev/404
+    │   │       index.ts                  // Public API of `core` folder: ENV, ErrorHandling etc.
+    │   │
+    │   └───routers                       // Routers for individual components from `components` folder
+    │           Common.router.ts          // API Endpoint handlers for `Common` controller
+    │           index.ts                  // All exported routers
+    │
+    └───types                             // TypeScript definition files goes here
+            types.d.ts                    // Generic typescript definition file
+
 ```
 
 ### Production deployment example
@@ -89,10 +107,10 @@ yarn install // or npm install
 Clone the repo on any unix (cloud) server. Make a build of the app:
 
 ```
-npm run build
+yarn run build
 ```
 
-Install [pm2](https://github.com/Unitech/pm2) globally:
+Install [pm2](https://github.com/Unitech/pm2) process manager:
 
 ```
 yarn add -g pm2

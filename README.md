@@ -109,6 +109,10 @@ If you need to debug some of your code during development, it's very easy. Open 
 
 **Note:** If inspect mode does not work for you, you need to configure ports by clicking on `Configure` button in `chrome://inspect/# devices`. The websocket port through which the inspect mode works is displayed during app launch in the command line ("Debugger listening on ws://127.0.0.1:9229/..."). In this example you need to add `localhost:9229` in `Configure` settings.
 
+### API Endpoints params validation
+
+To validate input params sent from API user [Joi](https://github.com/hapijs/joi) package is used. At first you need to define validation schemas ([example](https://github.com/jbutko/express-ts-api-boilerplate/blob/master/src/app/components/Common/Common.validators.ts)). The next step is to import schemas in your router, instantite Joi validator and use it as middleware. This way you can separate params validation logic out of controllers. Check the [example](https://github.com/jbutko/express-ts-api-boilerplate/blob/master/src/app/routers/Common.router.ts).
+
 ### Production deployment example
 
 Clone the repo on any unix (cloud) server. Make a build of the app:

@@ -19,10 +19,12 @@
   },
   "keywords": [
     "node",
+    "nodejs",
     "typescript",
-    "mongodb",
     "express",
-    "server"
+    "expressjs",
+    "server",
+    "http-server"
   ],
   "author": "Jozef Butko <jbutko@gmail.com> (https://www.jozefbutko.com)",
   "license": "MIT",

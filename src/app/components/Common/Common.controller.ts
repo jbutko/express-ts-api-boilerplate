@@ -3,6 +3,9 @@ import { Request, Response, NextFunction } from 'express-serve-static-core';
 
 const logger = debug('app:src/app/components/Common/Common.controller.ts');
 
+/**
+ * Example `Common` controller
+ */
 export class CommonController {
   /**
    * API health check endpoint

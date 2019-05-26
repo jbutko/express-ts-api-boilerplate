@@ -1,7 +1,7 @@
-import * as debug from 'debug';
-import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
+import * as debug from 'debug';
+import * as express from 'express';
 import * as helmet from 'helmet';
 import { Express, Request, Response, NextFunction } from 'express-serve-static-core';
 import { AppRouter } from './App.routes';

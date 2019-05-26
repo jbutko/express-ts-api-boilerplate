@@ -9,10 +9,10 @@
         "PORT": 3223
       },
       "autorestart": true,
-      "instances": 1,
+      "instances": 0,
       "log_date_format": "DD.MM.YYYY HH:mm Z",
-      "error_file": "/home/user/apps/express-ts-api-boilerplate/server/analytics/logs/pm2/error.log",
-      "out_file": "/home/user/apps/express-ts-api-boilerplate/server/analytics/logs/pm2/out.log"
+      "error_file": "/home/user/apps/express-ts-api-boilerplate/logs/pm2/error.log",
+      "out_file": "/home/user/apps/express-ts-api-boilerplate/logs/pm2/out.log"
     }
   ]
 }

@@ -1,21 +1,21 @@
 {
   "name": "express-ts-api-boilerplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Express Typescript API Boilerplate",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
     "start": "node -r ts-node/register --inspect ./src/index.ts",
     "dev": "nodemon",
     "build": "tsc",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "lint:fix": "tslint -p . --fix",
-    "format:prettier": "prettier \"src/**/*.ts\" -l \"warn\"",
-    "format:prettier:fix": "prettier --write \"src/**/*.ts\" -l \"warn\"",
+    "format": "prettier \"src/**/*.ts\" -l \"warn\"",
+    "format:fix": "prettier --write \"src/**/*.ts\" -l \"warn\"",
     "format:lint:fix": "prettier --write \"src/**/*.ts\" -l \"warn\" && npm run lint:fix"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jbutko/express-ts-api-boilerplate.git"
+    "url": "https://github.com/jbutko/express-ts-api-boilerplate.git"
   },
   "keywords": [
     "node",
@@ -24,7 +24,7 @@
     "express",
     "server"
   ],
-  "author": "Jozef Butko",
+  "author": "Jozef Butko <jbutko@gmail.com> (https://www.jozefbutko.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jbutko/express-ts-api-boilerplate/issues"
@@ -58,5 +58,8 @@
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.4.5"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
 }

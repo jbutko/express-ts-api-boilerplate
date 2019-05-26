@@ -2,8 +2,9 @@ import { Env } from './app/core';
 Env.loadEnvSettings();
 
 import * as http from 'http';
-import { App } from './app/app';
 import * as debug from 'debug';
+import { App } from './app/app';
+
 const logger = debug('app:src/index.ts');
 
 const app: App = new App();
